@@ -3676,7 +3676,83 @@ Aufbau:
 	\item Glühkathode mit Beschleunigungsspannung
 \end{itemize}
 
+\subsection{Halbraumstrahlung}
 
+Strahlung eines K"orpers mit Temperatur $T$.\\
+genauer:
+
+Strahlung eines K"orpers im thermodynamischen Gleichgewicht mit Strahlungsfeld.\\
+Schwarzer K"orper
+
+Strahlung jeder Wellenl"ange wird vollst"andig absorbiert.\\
+therm. dyn. sg. $\Leftrightarrow$ K"orper strahlt im gleichen Ma\ss e mit, er absorbiert auch ab.\\
+Hohlraumstrahler
+
+Strahlung jeder Wellenl"ange wird vollst"andig absorbiert. Emission jedoch nicht von ganzen K"orper, sondern nur einem kleinen Loch
+
+$\Rightarrow$ Intensit"at als Funktion der Frequenz oder Energiedichte der Strahlung $\omega(f)\dd f$\\
+
+\subsubsection{Grundlagen der Beschreibugn von Hohlraumstrahlung}
+
+$\Rightarrow$ Randbedingungen f"ur die Elektromagnetische Wellen\\
+$\Rightarrow$ Frequenz/Wellenl"angen sind eingeschr"ankt\\
+%tikz 1
+$\Rightarrow$ Moden\\
+$\Rightarrow$ Modendichte $g(f)$\[g(f)\dd f=\frac{8\pi l^2}{c^3}\dd f\]\\
+$\Rightarrow$ Energiedichte $w(f)$\[w(f,T)\dd f=g(f)\bar{W}(f,T)\dd f\]$\bar{W}(f,T)$: mittlere Energie pro Mode im Frequenzintervall $\dd f$\\
+\subsection{Klassische Berechnung: Rayleigh-Jeans Gesetz}
+thermodynamische Gleichgewicht: "Aquipartitionstheorem $f=2$\\
+\[\Rightarrow\bar{W}=kT\]
+\[\Rightarrow w(f,T)=\frac{8\pi f^2}{c^2}kT\] %box me daddy
+Probleme:
+\begin{itemize}
+\item $f\to\infty\Rightarrow$ UV-Katastrophe
+\item stimmt nicht mit Experiment "uberein
+\end{itemize}
+\subsection{Planck'sches Strahlungsgesetz I}
+Annahme f"ur die Energie einer Mode
+\[W_m=nkf,\ n\in\mathbb{N}\]
+$n:$ Besetzungszahl der Mode\\
+$\Rightarrow$ Besetzungszahldichte im thermodynamischen Gleichgewicht
+\[p_n=\frac{e^{-\frac{W_n}{kT}}}{z(T)}=\frac{e^{-\frac{nhf}{kT}}}{\sum_ne^{-\frac{nhf}{kT}}}\]
+\[\Rightarrow \bar{W}=\sum_np_nW_n\]
+\[\Rightarrow \bar{W}=\frac{kf}{e^{\frac{hf}{kt}}-1}\]
+\[\Rightarrow w(f)=\frac{8\pi kf^3}{c^3}\frac{1}{e^{\frac{hf}{kT}-1}}\]
+Wien'sche Verschiebungsgesetz\\
+\[f_{\mathrm{max}}\propto T\]
+Bemerkung:
+\[\lambda_\mathrm{max}\neq\frac{c}{f_\mathrm{max}}!\]
+Stefan-Boltzmann Gesetz
+\[P\propto T^4\]
+$P:$ gesamte Strahlungsleistung\\
+Beispiel: sonne
+\begin{align*}
+\textrm{Stefan Boltzmann} &&\Rightarrow T_\mathrm{Sonnenoberfl"ache}\approx5777\,\mathrm{K}\\
+\textrm{Wien} &&\Rightarrow T_\mathrm{Sonnenoberfl"ache}\approx5800\,\mathrm{K}\end{align*}
+\subsection{Gedanken zum Planck'schen Strahlungsgesetz}
+Grenzf"alle
+\begin{itemize}
+\item $\frac{hf}{kT}\to0:\ \bar{w}\to kT\Rightarrow\textrm{Rayleigh Jeans }\hat{=}\textrm{ klassischer Fall}$
+\item $\frac{hf}{kT}\to\infty:\ \bar{w}\to(hf)^3e^{-\frac{hf}{kT}}\Rightarrow$ keine UV-Katastrophe $\hat{=}$ quantenmechanischer Fall
+\end{itemize}
+$\Rightarrow$ impliziert Quantum f"ur Licht (Photon)
+\[E=hf=\hbar w\]
+Energiespektrum wie Schwingungsmode
+%tikz 2
+Wie Quantisierung aus kontinuierliche Kurve zu sehen?\\
+\[\frac{hf}{kT}\to\infty\Leftrightarrow w(f)\propto e^{-\frac{hf}{kT}}\]
+Besetzungszahlen
+\[\mathrm{klasssisch}\ \frac{hf}{kT}\to0\Rightarrow\textrm{ alle Zust"ande nahezu gleich besetzt} P_n\approx\frac{1}{N}\]
+\[\mathrm{q.m.}\frac{hf}{kT}\to\infty\Rightarrow\textrm{ alle Zust"ande exponentiell schwach besetzt bis auf Grundzustand}\]
+\[P_0\approx1,\ P_1\approx e^{-\frac{hf}{kT}},\ P_n\propto e^{-n\frac{hf}{kT}}\]
+Beispiel: Einstein Modell f"ur spezifische W"arme in Festk"orpern\\
+klassisch: "Aquipartitionstheorem $c_v=3\mathrm{NK}$
+\[\bar{w}=\frac{6}{2}kT=3kT,\ U=N\bar{w}\]
+\[c_v=\frac{\partial U}{\partial T}=3\mathrm{NK}\]
+Einstein Modell: alle Gitterschwingungen schwingen mit Frequenz $f_0$
+\[\Rightarrow w_n=nhf_0\]
+\[\Rightarrow c_v=3\mathrm{NK}\left(\frac{\hbar w_0}{kT}\right)^2\frac{e^{\frac{\hbar w_0}{kT}}}{\left[e^{\frac{h w_0}{kT}}-1\right]^2}\]
+\[\Rightarrow w(T\to0)\propto e^{-\frac{\hbar w_0}{kT}}\Leftrightarrow\textrm{ System ''friert'' aus}\]
 
 
 
