@@ -98,6 +98,7 @@
 \newcommand{\basis}[3]{\{#1_{#2}, \dots, #1_{#3}\}}
 \newcommand{\ska}[2]{\langle #1 , #2 \rangle}
 \newcommand{\dmat}[3]{\begin{pmatrix} #1_{#2}&&\\ &\ddots& \\ && #1_{#3} \end{pmatrix}}
+\newcommand{\vpsi}{\varPsi}
 
 %Ex:
 \newcommand{\kq}{\frac{1}{4\pi\epsilon_0}}
@@ -5560,9 +5561,67 @@ Die $ i $-te Zeile dieser $ 3 \times 3 $-Matrix wäre als Vektor: $ \vec{T}_i = 
 
 % notes 2 
 
-
-
-
+\begin{align*}\frac{\dd}{\dd t}P_{\mathrm{mat}_V}=\sum_i\vec{F}_i&=\sum_iq_i(\vec{E}*\vec{r}_i,t)+\vec{v}_i\times\vec{B}(\vec{r}_i,t))\\
+&=\int_V\dd^3r(\rho\vec{E}+\vec{j}\times\vec{B})\end{align*}
+\[\Rightarrow\underbrace{\frac{\dd}{\dd t}P_{\mathrm{mat}_V}}_{\textrm{"Anderung des Impulses der Teilchen}}+\underbrace{\frac{\dd}{\dd t}\int_V\dd^3r(\vec{D}\times\vec{B})}_{\textrm{"Anderung des Impulses des elektromagnetischen Feldes}}=\sum_{i=1}^3\underbrace{\int_V\dd^3r\sum_{k=1}^3\frac{\partial T_{iK}}{\partial x_k}\vec{e}_1}_{\int_{\partial v}\dd\vec{f}\cdot\vec{T}_i\vec{e}_i}\]
+differentiell:
+\[(\rho\vec{E}+\vec{j}\times\vec{B})+\frac{\partial}{\partial t}(\vec{D}\times\vec{B})=\sum_i(\vabla\cdot\vec{T}_i)\vec{e}_i\]
+\begin{enumerate}[i)]
+\item \[P_{\mathrm{em}_V}=\int_V\dd^3r\underbrace{\vec{D}\times\vec{B}}_{=\vec{g}\textrm{ Impulsdichte}}\textrm{ Impuls elektromagnetisches Feld}\]
+\[\vec{D}=\epsilon\vec{E}_i,\ \vec{B}=\mu\vec{H}\rightarrow\vec{g}=\epsilon\mu{\vec{E}\times\vec{H}}_{=\vec{s}}=\epsilon_r\mu_r\underbrace{\epsilon_0\mu_0}_{=\frac{1}{c^2}}\vec{s}=\epsilon_r\mu_r\underbrace{\frac{1}{c^2}\vec{s}}_{\left[\frac{1}{c^2}\vec{s}\right]=\frac{\mathrm{Impuls}}{\mathrm{Volumen}}}\]
+Impulsdichte ebene Welle
+\begin{align*}\vec{E}&=E_0\cos(kz-\omega t)\vec{e}_x\\
+\vec{B}&=\frac{E_0}{c}\cos(kz-\omega t)\vec{e}_y\\
+\vec{s}&=\vec{E}\times\vec{H}=c\epsilon_0E_0^2\cos^2(kz-\omega t)\vec{e}_z\\
+\vec{g}&=\frac{\epsilon_0}{c}E_0^2\cos^2(kz-\omega t)\vec{e}_z\end{align*}
+\item \underline{Maxwellscher Spannungstensor - Impulsstromdichte}
+\[T_{ik}=\epsilon E_iE_k+\frac{1}{\mu}B_iB_k-\frac{1}{2}\delta_{ik}(\epsilon\vec{E}^2+\frac{1}{2}\vec{B}^2)\]
+\[\frac{\dd}{\dd t}(P_{\mathrm{mat}_V}+P_{\mathrm{em}_V})=\sum_i\left(\int_{\partial V}\dd\vec{f}\cdot\vec{T}_i\right)\vec{e}_i\]
+Analogie: Energiebilanz
+\[\frac{\dd}{\dd t}(W_{\mathrm{mat}_V}+W_{\mathrm{em}_V})=-\int_{\partial V}\dd\vec{f}\cdot\vec{s}\]
+\[\Rightarrow-\vec{T}_i\textrm{ Impulsstromdichte zu }P_i\]
+\[\left[T_{ik}\right]=\mathrm{\frac{Impuls}{Fl"ache\cdot Zeit}}\]
+$T_{ik}$: Berechnung von Kr"aften auf geladene materielle K"orper im elektromagnetischen Feld
+%tikz 1
+\begin{align*}\frac{\dd}{\dd t}\vec{P}&=\sum_i\int_{\partial V}\dd\vec{f}\cdot\vec{T}_i\vec{e}_i\\
+&=\sum_{i=1}^3\underbrace{\left(\frac{\dd}{\dd t}P_i\right)}_{\textrm{ Kraft }\vec{K},\ K_i}\vec{e}_i\end{align*}
+\[\Rightarrow\dd K_i=(\vec{n}\cdot\vec{T}_i)\dd f\]
+\[\dd\vec{f}=\vec{n}\dd f\]
+\[\Rightarrow\left[\frac{\dd K_o}{\dd f}\right]=\mathrm{\frac{Kraft}{Fl"ache}}=\mathrm{Druck}\]
+Beispiel: Plattenkondensator
+%tikz 2
+\[\vec{E}=\begin{cases}E&\vec{e}_x\textrm{ innen}\\0&\textrm{ au\ss en}\end{cases}\]
+\[\vec{B}=0\]
+\[T_{ik}=\underbrace{\epsilon E_iE_k}_{=\epsilon_0E^2\delta_{ix}\delta_{kx}}+\underbrace{\frac{1}{\mu}B_iB_k}_{=0}-\frac{1}{2}\delta_{ik}(\underbrace{\epsilon\vec{E}^2}_{\epsilon_0E^2}+\underbrace{\frac{1}{\mu}\vec{B}^2}_{=0})\textrm{ innen, aussen}:T_{ik}=0\]
+\[T_{xx}=\frac{1}{2}\epsilon_0E^2,\ T_{yy}=-\frac{\epsilon_0}{2}E^2=T_{zz}\textrm{ sonst }=0\]
+\[T=\frac{\epsilon_0}{2}E^2\begin{pmatrix}1&0&0\\0&-1&0\\0&0&-1\end{pmatrix}\]
+Kraft in $x$-Richtung:
+\[K_x=\int_{\partial V}\dd\vec{f}\cdot\underbrace{\vec{T}_x}_{\mathclap{\substack{=(T_{xx},T_{xy},T_{xz})\\=\frac{\epsilon_0}{2}E^2\vec{e}_x}}}\]
+%tikz 3
+\[\dd\vec{f}=\dd y\dd z\vec{e}_x\]
+\[\Rightarrow K_x=\int_{F_x}\dd f\frac{\epsilon_0}{2}E^2=\frac{\epsilon_0}{2}E^2F_x\]
+\[\rightarrow\mathrm{\frac{Kraft}{Fl"ache}}:\frac{K_x}{F_x}=\frac{\epsilon}{2}E^2=\frac{\sigma^2}{2\epsilon_0}\]
+\[\vec{K}=(K_x,0,0)\]
+\end{enumerate} 
+\section{Elektromagnetische Wellen}
+\subsection{Maxwell-Gleichungen in einem Isolator-Homogene Wellengleichung}
+\[\rho_f=0=\vec{j}f\]
+\[\vec{D}=\epsilon\vec{E}_i,\ \vec{B}=\mu\vec{H}\]
+\[\vabla\cdot\vec{E}=0\]
+\[\vabla\cdot\vec{B}=0\]
+\[\vabla\times\vec{E}+\frac{\partial\vec{B}}{\partial t}=0\]
+\[\vabla\times\vec{B}-\epsilon\mu\frac{\partial\vec{E}}{\partial t}=0\]
+\[0=\underbrace{\vabla\times(\vabla\times\vec{E})}_{\mathclap{\vabla(\underbrace{\vabla\cdot\vec{E}}_{=0})-\Delta\vec{E}}}+\frac{\partial}{\partial t}\underbrace{\vabla\times\vec{B}}_{=\epsilon\mu\frac{\partial\vec{E}}{\partial t}}=-\Delta\vec{E}+\epsilon\mu\frac{\partial^2\vec{E}}{\partial t^2}\]
+\[\Rightarrow\Delta\vec{E}-\epsilon\mu\frac{\partial^2\vec{E}}{\partial t^2}=0\]
+\[\epsilon\mu=\epsilon_r\mu_r\epsilon_0\mu_0=\frac{\epsilon_r\mu_r}{c^2}\]
+\[n=\sqrt{\epsilon_r\mu_r}\textrm{ Brechungsindex des betrachteten Materials}\]
+\[v=\frac{c}{n}\textrm{ Geschwindigkeit}\]
+\[\Rightarrow\Delta\vec{E}-\frac{n^2}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}=0\]
+\[0=\underbrace{\vabla\times\vabla\times\vec{B})}_{\mathclap{\vabla((\underbrace{\vabla\cdot\vec{B}}_{=0})-\Delta\vec{B}}}-\epsilon\mu\frac{\partial}{\partial t}\underbrace{\vabla\times\vec{E}}_{-\frac{\partial\vec{B}}{\partial t}}\]
+\[\Delta\vec{B}-\frac{n^2}{c^2}\frac{\partial^2\vec{B}}{\partial t^2}=0\]
+homogene Wellengleichungen
+\[\Delta\vpsi-\frac{n^2}{c^2}\frac{\partial^2\vpsi}{\partial t^2}=0\]
+\[\vpsi=E_x,E_y,\ldots,B_z\]
 
 
 
