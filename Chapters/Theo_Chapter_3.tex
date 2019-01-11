@@ -1305,3 +1305,109 @@ Physikalisches Feld:
 		\draw[white] (2,-2.5) -- ++(0,-0.315);
 	\end{tikzpicture}
 \end{center}
+
+% eben wellen
+
+\subsection{andere Formen elektromagnetischer Wellen}
+\[\vec{E}(\vec{r},t)=\int\dd^3k\vec{a}(\vec{k})e^{i(\vec{k}\cdot\vec{r}-\underbrace{\omega t}_{\omega(k)}}\]
+Wellenpakete:
+%t2
+
+\subsection{Kugelwellen}
+\[\vec{E}(\vec{r},t)=\vec{E}_0\frac{e^{i(kr-\omega t)}}{r}\]
+Fl"achen gleicher Phase
+%t3
+Amplitude $\rho\propto\frac{1}{r}$
+%t4
+
+\section{Reflexion und Brechung elektromagnetischer Wellen an Grenzfl"achen}
+Betrachte ebene Grenzfl"ache ($x$-$y$-Ebene) zwischen zwei ungeladenen, nichtleitenden Medien
+%t5
+einfallende Welle:
+\[\vec{E}_\mathrm{e}=\vec{E}_{\mathrm{e}_0}e^{i(\vec{k}_\mathrm{e}\cdot\vec{r}-\omega_\mathrm{e}t)}\]
+\[\vec{B}_\mathrm{e}=\frac{1}{\omega_\mathrm{e}}\vec{k}_\mathrm{e}\times\vec{E}_\mathrm{e}\]
+\[v_1=\frac{1}{\sqrt{\epsilon_1\mu_1}},\ \omega_\mathrm{e}=v_1k_\mathrm{e}\]
+\[\Rightarrow\vec{B}_\mathrm{e}=\frac{1}{v_1}\frac{\vec{k}_\mathrm{e}}{k_\mathrm{e}}\times\vec{E}_\mathrm{e}\]
+\[\vec{k}_\mathrm{e}=\begin{pmatrix}k_{\mathrm{e}y}\\0\\k_{\mathrm{e}z}\end{pmatrix}\]
+
+\subsection{reflektierte Welle}
+\[\vec{E}_\mathrm{r}=\vec{E}_{\mathrm{r}_0}e^{i(\vec{k}_\mathrm{r}\cdot\vec{r}-\omega_\mathrm{r}t)}\]
+\[\vec{B}_\mathrm{r}=\frac{1}{v_1}\frac{\vec{k}_\mathrm{r}}{k_\mathrm{r}}\times\vec{E}_\mathrm{r}\]
+gesamtes Feld in 1:
+\[\vec{E}_1=\vec{E}_\mathrm{e}+\vec{E}_\mathrm{r}\]
+
+\subsection{transmittierte Welle}
+\[\vec{E}_2=\vec{E}_{2_0}e^{i(\vec{k}_2\cdot\vec{r}-\omega_2t)}\]
+\[\vec{B}_2=\frac{1}{v_2}\frac{\vec{k}_2}{k_2}\times\vec{E}_2\]
+
+\subsection{Stetigkeitsbedingungen an Grenzfl"achen}
+hier: ungeladene, nichtleitende Medien:
+\[\rho_f=0=\vec{j}_f\]
+Maxwell-Gleichungen $\Rightarrow$ Stetigkeitsbedingungen f"ur
+\[\vec{r}=)x,y,0)\]
+\begin{enumerate}[i)]
+\item \[\vec{n}\cdot(\vec{D}_2-\vec{D}_1)=0\Rightarrow\epsilon_1\vec{n}\cdot\vec{E}_1-\epsilon_2\vec{n}\cdot\vec{E}_2=0\]
+\item \[\vec{t}\cdot(\vec{E}_1-\vec{E}_2)=0\]
+\item \[\vec{n}\cdot(\vec{B}_1-\vec{B}_2)=0\]
+\item \[\vec{t}\cdot(\vec{H}_1-\vec{H}_2)=0=\frac{1}{\mu_1}\vec{t}\cdot\vec{B}_1-\frac{1}{\mu_2}\vec{t}\cdot\vec{B}_2=0\]
+\end{enumerate}
+
+Aus ii)
+\[\Rightarrow\vec{t}\cdot\vec{E}_2=\vec{t}\cdot\vec{E}_1=\vec{t}\cdot(\vec{E}_\mathrm{e}+\vec{E}_\mathrm{r})\]
+\[\Rightarrow\vec{t}\cdot\vec{E}_{2_0}e^{i(\vec{k}_2\cdot\vec{r}-\omega_2 t)}=\vec{t}\cdot\vec{E}_{\mathrm{2}_0}e^{i(\vec{k}_\mathrm{e}\cdot\vec{r}-\omega_\mathrm{e}t)}+\vec{t}\cdot\vec{e}_{\mathrm{r}_0}e^{i(\vec{k}_\mathrm{r}\cdot\vec{r}-\omega_\mathrm{r}t)}\]
+$\rightarrow$ Orts- und Zeitabh"angigkeit im Exponenten muss gleich sein
+\[\vec{k}_2\cdot\vec{r}-\omega_2t=\vec{k}_\mathrm{e}\cdot\vec{r}-\omega_\mathrm{e}t=\vec{k}_\mathrm{r}\cdot\vec{r}-\omega_\mathrm{r}t\]
+$\vec{r}=0$:
+\[\Rightarrow\omega_2=\omega_\mathrm{e}=\omega_\mathrm{r}\eqdef\omega\]
+\[v_1=\frac{\omega_\mathrm{e}}{|\vec{k}_\mathrm{e}|}=\frac{\omega_\mathrm{r}}{|\vec{k}_\mathrm{r}|}\]
+\[\Rightarrow|\vec{k}_\mathrm{e}|=|\vec{k}_\mathrm{r}|\eqdef k_1\]
+\[k_2=\frac{\omega_2}{v_2}=\omega\sqrt{\epsilon_2\mu_2}=\omega\sqrt{\frac{\epsilon_2\mu_2}{\epsilon_1\mu_1}}\sqrt{\epsilon_1\mu_1}=\underbrace{\frac{\omega}{v_1}}_{k_1}=k_1\sqrt{\frac{\epsilon_2\mu_2}{\epsilon_1\mu_1}}\]
+$t=0$:
+\[\vec{k}_2\cdot\vec{r}=\vec{k}_\mathrm{e}\cdot\vec{r}=\vec{k}_\mathrm{r}\cdot\vec{r}\]
+\[k_{2_x}x+k_{2_y}y=k_{\mathrm{e}_x}x+\underbrace{\cancel{k_{\mathrm{e}_y}y}}_{=0}=k_{\mathrm{r}_x}x+k_{\mathrm{r}_y}y\]
+\[\Rightarrow k_{2_y}=0=k_{\mathrm{r}_y}\]
+$\Rightarrow\vec{k}_\mathrm{e},\ \vec{k}_\mathrm{r},\ \vec{k}_2$ liegen in einer Ebene (hier: $x$-$z$-Ebene) Einfallsebene
+%t6
+\begin{align*}
+\vec{k}_\mathrm{e}&=k_\mathrm{e}(\sin\theta_\mathrm{e}\vec{e}_x+\cos\theta_\mathrm{e}\vec{e}_z)\\
+\vec{k}_\mathrm{r}&=k_\mathrm{r}(\sin\theta_\mathrm{r}\vec{e}_x-\cos\theta_\mathrm{r}\vec{e}_z)\\
+\vec{k}_2&=k_2(\sin\theta_2\vec{e}_x+\cos\theta_2\vec{e}_z)
+\end{align*}
+
+$\Rightarrow$ \textbf{Reflexionsgesetz} $\theta_\mathrm{e}=\theta_\mathrm{r}$
+\[\vec{r}=(x,0,0):\ \vec{k}_\mathrm{e}\cdot\vec{r}=\vec{k}_\mathrm{r}\cdot\vec{r}\]
+\begin{align*}
+\vec{k}_\mathrm{e}\cdot\vec{r}&=xk_1\sin\theta_\mathrm{e}\\
+\vec{k}_\mathrm{r}\cdot\vec{r}&=xk_1\sin\theta_\mathrm{r}
+\end{align*}
+
+\subsection{Brechungsgesetz}
+\[\vec{k}_2\cdot\vec{r}=\vec{k}_\mathrm{e}\cdot\vec{r}\]
+\[k_2\sin\theta_2=k_1\sin\theta_1=k_1\sqrt{\frac{\epsilon_2\mu_2}{\epsilon_1\mu_1}}=k_1\frac{n_2}{n_1}\]
+\[\frac{n_2}{n_1}=\frac{\sin\theta_1}{\sin\theta_2}\]
+
+%t7
+
+F"ur $n_1>n_2$: Grenzwinkle $\theta_1\eqdef\theta_\mathrm{g}$ bei dem Totalreflexion auftritt (dh $\theta_2=\frac{\pi}{2}$)
+\[\sin\theta_\mathrm{g}=\frac{n_2}{n_1}\sin\frac{\pi}{2}=\frac{n_2}{n_1}\]
+zB Wasser $n_1=1.33$
+Luft $n_2=1$
+\[\rightarrow\theta_\mathrm{g}\approx49\degree\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
