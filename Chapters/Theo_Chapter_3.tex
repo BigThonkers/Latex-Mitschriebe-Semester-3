@@ -1952,6 +1952,105 @@ $ \vec{E}_{r_0} = E_{r_0} \vec{e}_y \quad \vec{E}_{2_0} = E_{2_0} \vec{e}_y $\\[
 	$ k_{2_x} = k_{r_x} $
 \end{enumerate}
 
+% Lecture 17.01 from 10:43 onwards
+
+\[k=k_R+ik_I\]
+\begin{align*}
+\Rightarrow k^2&=k^2_R+-k^2_I+2ik_Rk_I\\
+&\overset{!}{=}\mu\epsilon\omega^2+i\mu\sigma\omega
+\end{align*}
+\[\Rightarrow k_{R/I}=\omega\sqrt{\frac{\epsilon\mu}{2}}\left[\sqrt{1+\left(\frac{\sigma}{\epsilon\omega}\right)^2}\pm1\right]^{\nicefrac{1}{2}}\]
+\begin{align*}
+\vec{E}&=\vec{E}_0e^{i(kz-\omega t)}\\
+&=\vec{E}_0e^{i((k_R+ik_I)z-\omega t)}\\
+&=\vec{E}_0e^{-k_Iz}e^{i(k_Rz-\omega t)}
+\end{align*}
+%T3
+Eindringtiefe $d=\frac{1}{k_I}$\\
+typische Werte: Kupfer $\sigma=5,181\cdot10^7\,(\Omega\mathrm{m})^{-1}$\\
+$\omega 1\,\mathrm{MHz}\ 6\cdot10^{14}\,\mathrm{Hz}\ d\ 66\,\mathrm{\mu m}\ 2,7\,\mathrm{nm}$ wtf formatting?????????????
+
+\subsection{Frequenzabh"angigkeit der Dielektrizit"atskonstanten - Dispersion}
+
+\subsubsection{Modell f"ur $\epsilon(\omega)$}
+\[\mu_r\approx1\]
+\[\epsilon=\epsilon_0(1+\chi_e),\ \vec{P}=\epsilon_0\chi_e\vec{E}=\mathrm{\frac{Dipol}{Volumen}}=N<\vec{p}>\]
+Verschiebungspolarisation:
+\[<\vec{p}>=\underbrace{\alpha}_{\mathclap{\textrm{atomare Polarisierbarkeit}}}\vec{E}\]
+\[\chi_e=\frac{N\alpha}{\epsilon}\]
+
+\subsubsection{Klassisches Oszillatormodell f"ur die Bindung von Elektronen in Atomen}
+
+%T4
+
+\[m(\ddot{\vec{r}}+\gamma\dot{\vec{r}}+\omega^2_0\vec{r})=q\vec{E}(\vec{r},t)\]
+\[\rightarrow\textrm{ Dipolmoment }\vec{p}=q\vec{r},\ q=-e\]
+\[\Rightarrow m(\ddot{\vec{p}}+\gamma\dot{\vec{p}}+\omega^2_0\vec{p})=e^2\vec{E}\]
+statischer Grenzfall: \[\vec{E}(\vec{r},t)=\vec{E}(\vec{r})\]
+\[\dot{\vec{p}}=0=\ddot{\vec{p}}\Rightarrow\vec{p}=\frac{e^2E}{m\omega^2_0}\]
+\[\Rightarrow\chi_e=\frac{Ne^2}{\epsilon_0m\omega_0^2}\]
+zeitabh. Fall:
+\[\vec{E}=\vec{E}_0e^{-i\omega t}\ e^{ikz}=e^{i\frac{2\pi}{\lambda}z}\]
+Mechanik:
+\[\Rightarrow\vec{p}(t):\textrm{ erzwungene Schwingung mit Frequenz }\omega\]
+\[\vec{p}(t)=\vec{p}_0e^{-i\omega t}\]
+\[m(-\omega^2-i\gamma\omega+\omega_0^2)\vec{p}_0e^{-i\omega t}=e^2\vec{E}_0e^{-i\omega t}\]
+\[\vec{p}_0=\underbrace{\frac{e^2}{m}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}}_{\alpha(\omega)}\vec{E}_0\]
+\begin{align*}
+\Rightarrow\chi_e(\omega)&=\frac{N\alpha(\omega)}{\epsilon_0}\\
+&=\frac{Ne^2}{\epsilon_0m}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}\\
+\Rightarrow\epsilon(\omega)&=\epsilon_0\epsilon_r(\omega)\\
+&=\epsilon_0(1+\chi_e(\omega))
+\end{align*}
+\[\epsilon_r(\omega)=1+\frac{Ne^2}{\epsilon_0}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}\]
+Realteil
+\[\Re(\epsilon_r(\omega))=1+\frac{Ne^2}{\epsilon_0}\frac{\omega_0^2-\omega^2}{(\omega_0^2-\omega^2)^2+\gamma^2\omega^2}\]
+Imagin"arteil
+\[\Im(\epsilon_r(\omega))=1+\frac{Ne^2}{\epsilon_0}\frac{\gamma\omega}{(\omega_0^2-\omega^2)^2+\gamma^2\omega^2}\]
+
+%T5
+
+\underline{Bem:} \underline{Dispersion}\\
+Frequenzabh. von $\epsilon=\epsilon(\omega)$\\
+Brechungsindex $n=\sqrt{\epsilon_r\mu_r}=n(\omega)$\\
+normale Dispersion $\frac{\dd\epsilon_R}{\dd\omega}>0$\\
+anomale Dispersion $\frac{\dd\epsilon_R}{\dd\omega}<0$\\
+Verallgemeinerung auf $Z$ Elektronen in Atom. $f_j$ Elektronen mit Frequenz $\omega_j$, $\gamma_j$
+\[\epsilon_r(\omega)=1+\frac{Ne^2}{\epsilon_0m}\sum_j\frac{f_j}{\omega_j^2-\omega^2-i\gamma_j\omega}\]
+
+%T6
+
+\subsubsection{Bedeutung der komplexen/frequenzabh"angigen Dielektrizit"atskonstante}
+
+Wellengleichung in Medium $\epsilon=\epsilon(\omega)$, $\mu\approx\mu_0$, $\sigma=0$
+\[\Delta\vec{E}-\mu_0\epsilon\frac{\partial^2\vec{E}}{\partial t^2}=0\]
+\[\vec{E}=\vec{E}_0e^{i(kz-\omega t)}\rightarrow-k^2+\mu_0\epsilon\omega^2=0\]
+
+\[\Rightarrow k^2=\mu_0\epsilon\omega^2=\mu_0(\epsilon_R+i\epsilon_I)\omega^2\]
+\[k=k_R+ik_I\]
+\[k_R^2-k_I^2+2ik_Rk_I=\mu_0\epsilon_r\omega^2+o\mu\epsilon_I\omega^2\]
+\[k_{R/I}=\omega\sqrt{\frac{\mu_0\epsilon_R}{2}}\left[\sqrt{1+\left(\frac{\epsilon_I}{\epsilon_R}\right)^2}\pm1\right]^nicefrac{1}{2}\]
+\[\epsilon_I\approx0:\ k_I\approx0,\ k_R\approx\omega\sqrt{\mu_0\epsilon_r(\omega)}\]
+\[\vec{E}(\vec{r},t)=\vec{E}_0e^{ik_zz}e^{i(k_Rz-\omega t)}\]
+
+%T7
+
+Ausbreitungsgeschwindigkeit \[v=\frac{\omega}{k_R}=v(\omega)=\frac{c}{n(\omega)}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
