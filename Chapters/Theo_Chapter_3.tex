@@ -2208,3 +2208,159 @@ k_{R/I} = \omega \sqrt{\frac{\mu_0 \epsilon_R}{2}} \left[\sqrt{1 + \left(\frac{\
 %
 Ausbreitungsgeschwindigkeit:
 $$ v = \frac{\omega}{k_R} = v(\omega) = \frac{c}{n(\omega)} $$
+
+% Lecture 21.01
+
+\section{Allgemeine L"osung der Maxwell-Gleichung - Retardierte Potentielle}
+
+Wir suchen L"osungen der Gleichunge:
+\begin{align*}
+\vabla\cdot\vec{B}=&0\\
+\vabla\cdot\vec{E}&=\frac{\rho}{\epsilon_0}\\
+\vabla\times\vec{E}+\frac{\partial\vec{B}}{\partial t}&=0\\
+\vabla\times\vec{B}-\underbrace{\epsilon_0\mu_0}_{\nicefrac{1}{c^2}}\frac{\partial\vec{E}}{\partial t}&=\mu\vec{J}
+\end{align*}
+gegeben: \[\rho(\vec{r},t),\ \vec{J}(\vec{r},t)\]
+gesucht: \[\vec{E}(\vec{r},t),\ \vec{B}(\vec{r},t)\]
+zur formalen L"osung der Gleichung verwenden wir die Potentialle $\phi,\ \vec{A}$ der Elektrodynamik
+\[\vec{B}=\vabla\times\vec{A},\ \vec{E}=-\vabla\phi-\frac{\partial\vec{A}}{\partial t}\]
+Lorentzeichung:
+\[\vabla\cdot\vec{A}+\frac{1}{c^2}\frac{\partial\phi}{\partial t}=0\]
+Aus den inhomogenen Gleichungen erhalten wir:
+\[\Delta\phi-\frac{1}{c^2}\frac{\partial^2\phi}{\partial t^2}=-\frac{1}{\epsilon_0}\rho\]
+\[\Delta\vec{A}-\frac{1}{c^2}\frac{\partial^2\vec{A}}{\partial t^2}=-\mu_0\vec{J}\]
+Nebenbemerkung:
+\[\Delta\psi(\vec{r},t)-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\psi(\vec{r},t)\eqdef\Box\psi(\vec{r},t)\]
+d'Alembert-Operator
+\[\Box=\Delta-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\]
+Aus Elektro-/Magnetostatik:
+\[\frac{\partial}{\partial t}\phi=0=\frac{\partial}{\partial t}\vec{A}\]
+\[\Delta\phi(\vec{r}=-\frac{\rho}{\epsilon_0}\textrm{ Poisson-Gleichung}\]
+\[\Delta\vec{A}(\vec{r})=-\mu_0\vec{J}\]
+Die L"osungen waren:
+\[\phi(\vec{r})=\phi_\mathrm{hom}(\vec{r})+\phi_\mathrm{inh}(\vec{r})\]
+\[\phi_\mathrm{inh}(\vec{r})=\frac{1}{4\pi\epsilon_0}\int\dd^2\vec{r}'\frac{\phi(\vec{r}')}{|\vec{r}-\vec{r}'|}\]
+sowie
+\[\vec{A}(\vec{r}=\vec{A}_\mathrm{hom}(\vec{r})+\vec{A}_\mathrm{inh}(\vec{r})\]
+mit \[\vec{A}_\mathrm{inh}(\vec{r})=\frac{\mu_0}{4\pi}\int\dd^3\vec{r}'\frac{\vec{J}(\vec{r}')}{|\vec{r}-\vec{r}'|}\]
+und \[\Delta\vec{A}_\mathrm{hom}=0\]
+Wir k"onnen die Diskussion auf das skalare Potential $\phi$ beschr"anken:
+\[\Delta\phi=\frac{1}{c^2}\frac{\partial^2}{\partial t^2}=-\frac{1}{\epsilon_0}\rho\]
+\[\phi(\vec{r},t)=\phi_\mathrm{hom}+\phi_\mathrm{inh}\]
+wobei:
+
+$\phi_\mathrm{hom}$: allgemeine L"osung der homogenen Gleichung
+\[\Delta\phi_\mathrm{hom}-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\phi_\mathrm{hom}=0\]
+
+$\phi_\mathrm{inh}$: spezielle L"osung der inhomogenen Gleichung
+\[\Delta\phi_\mathrm{inh}-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\phi_\mathrm{inh}=-\frac{1}{\epsilon_0}\rho\]
+L"osung der homogenen Wellengleichung zB durch ebene Wellen:
+\[\phi_\mathrm{hom}(\vec{r},t)=\Re\left\{ae^{i(\vec{k}\cdot\vec{r}-\omega t)}\right\}\]
+mit \[\vec{k}\in\mathbb{R}^3,\ |\vec{k}|=\frac{\omega}{c}\textrm{ bzw }\omega(\vec{k})=|\vec{k}|c\]
+allgemeine L"osung durch Linearkombination
+\[\phi_\mathrm{hom}(\vec{r},t)=\Re\left\{\int\dd^3\vec{k}a(\vec{k}e^{i(\vec{k}\cdot\vec{r}-\omega(\vec{k}t)}\right\}\]
+Bestimmung einer speziellen L"osung der inhomogenen Wellengleichung
+\[\Delta\phi-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\phi=-\frac{1}{\epsilon_0}\rho\]
+Zur L"osung der Gleichungen betrachten wir eine Fouriertransformation von $\phi(\vec{r},t)$ bez"uglich der Variablentransformation.
+\[\tilde{\phi}(\vec{r},\omega)\defeq\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\dd t\phi(\vec{r},t)e^{i\omega t}\]
+Man kann zur"ucktransformieren:
+\[\phi(\vec{r},t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\dd\omega\tilde{\phi}(\vec{r},\omega)e^{-i\omega t}\]
+denn:
+\begin{align*}
+\phi(\vec{r},t)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\dd\omega\left\{\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\dd t'\phi(\vec{r},t')e^{i\omega t}\right\}\\
+&=\int_{-\infty}^\infty\dd t'\phi(\vec{r},t')\underbrace{\frac{1}{2\pi}\int_{-\infty}^\infty\dd\omega e^{-\omega(t-t')}}_{=\delta(t-t')}\\
+&=\phi(\vec{r},t)
+\end{align*}
+Wir setzen nun die Fourierdarstellung in die DGL ein:
+\begin{align*}
+\frac{\partial^2}{\partial t^2}\phi(\vec{r},t)&=\frac{1}{\sqrt{2\pi}}\int\dd\omega\tilde{\phi}(\vec{r},\omega)\underbrace{\frac{\partial^2}{\partial t^2}e^{-i\omega t}}_{=-\omega^2e^{i\omega t}}\\
+&=-\frac{1}{\sqrt{2\pi}}\int\dd\omega\tilde{\phi}(\vec{r},\omega)\omega^2e^{-i\omega t}
+\end{align*}
+Damit
+\begin{align*}
+\frac{1}{\sqrt{2\pi}}\int\dd\omega e^{-i\omega t}\left(\Delta+\frac{\omega^2}{c^2}\right)\tilde{\phi}(\vec{r},\omega)&=-\frac{1}{\epsilon_0}\rho(\vec{r},t)\\
+&=\frac{1}{\sqrt{2\pi}}\int\dd\omega e^{i\omega t}\left(-\frac{1}{\epsilon_0}\right)\tilde{\rho}(\vec{r},\omega)
+\end{align*}
+\[\Rightarrow(*)\left(\Delta+\frac{\omega^2}{c^2}\right)\tilde{\phi}(\vec{r},\omega)=-\frac{1}{\epsilon_0}\tilde{\rho}(\vec{r},\omega)\]
+sogenannte Helmholtz-Gleichung\\
+Zur Bestimmung der L"osungen von $(*)$ betrachten wir zun"achst Analogie zur Elektrostatik:
+\[\omega\to0:\ \left(\hat{=}\frac{\partial}{\partial t}=0\right)\]
+\[\Rightarrow\Delta\tilde{\phi}=-\frac{1}{\epsilon_0}\tilde{\rho}\textrm{ Poissongleichung}\]
+spezielle L"osung (ohne Randbedingungen)
+\[\tilde{\phi}(\vec{r},\omega=0)=\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{\rho(\vec{r}')}{|\vec{r}-\vec{r}'|}=\int\dd^3r'G(\vec{r},\vec{r}')\rho(\vec{r}')\]
+mit der Greenschen Funktion:
+\[G(\vec{r},\vec{r}')=\frac{1}{4\pi\epsilon_0}\frac{1}{|\vec{r}-\vec{r}'|}\]
+Diese erf"ullt:
+\[\Delta_{\vec{r}}G(\vec{r},\vec{r}')=-\frac{1}{\epsilon_0}\delta(\vec{r}-\vec{r}')\]
+Wir ben"otigen Verallgemeinerung f"ur $\omega\neq0$:
+\[\left(\Delta_{\vec{r}}+\frac{\omega^2}{c^2}\right)G_\omega(\vec{r},\vec{r}')=-\frac{1}{\epsilon_0}\delta(\vec{r}-\vec{r}')\]
+Es zeigt sich, dass gilt:
+\[\left(\Delta_{\vec{r}}+\frac{\omega^2}{c^2}\right)\frac{e^{\pm ik|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}=-4\pi\delta(\vec{r}-\vec{r}')\]
+Mit $k=\frac{\omega}{c}$ folgt:
+\[\left(\Delta_{\vec{r}}+\frac{\omega^2}{c^2}\right)\frac{1}{4\pi\epsilon_0}\frac{e^{\pm i\frac{\omega}{c}|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}=-\frac{1}{\epsilon_0}\delta(\vec{r}-\vec{r}')\]
+und somit
+\[\tilde{\phi}(\vec{r},\omega)=\frac{1}{4\pi\epsilon_0}\int\dd^3\vec{r}'\underbrace{\frac{e^{i\frac{\omega}{c}|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'}}_{G_\omega(\vec{r},\vec{r}')}\tilde{\rho}(\vec{r}',\omega)\]
+F"ur das Potential $\phi$ erhalten wir:
+\begin{align*}
+\phi(\vec{r},t)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\dd\omega\tilde{\phi}(\vec{r},\omega)e^{-i\omega t}\\
+&=\frac{1}{\sqrt{2\pi}}\int\dd\omega\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{e^{i\frac{\omega}{c}|\vec{r}-\vec{r}'|}e^{-i\omega t}}{|\vec{r}-\vec{r}'|}\tilde{\rho}(\vec{r}',\omega)\\
+&=\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{1}{|\vec{r}-\vec{r}'|}\underbrace{\frac{1}{\sqrt{2\pi}}\int\dd\omega\tilde{\rho}(\vec{r}',\omega)e^{-i\omega\left(t-\frac{|\vec{r}-\vec{r}'|}{c}\right)}}_{=\rho\left(\vec{r}',t-\frac{|\vec{r}-\vec{r}'|}{c}\right)}
+\end{align*}
+\[\Rightarrow\phi(\vec{r},t)=\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{\rho\left(\vec{r},t-\frac{|\vec{r}-\vec{r}'|}{c}\right)}{|\vec{r}-\vec{r}'|}\]
+Wie Elektrostatik, aber: \[t\to\tilde{t}=t-\frac{|\vec{r}-\vec{r}'|}{c}\]
+Physikalische Bedeutung:
+
+% T1
+
+\[t=\tilde{t}+\frac{|\vec{r}-\vec{r}'|}{c}\]
+Betrachte "Anderung der Ladungsverteilung $\rho$ in $\vec{r}'$ zur Zeit $\tilde{t}$\\
+$\Rightarrow$ "Anderung des elektromagnetischen Feldes $(\phi)$ verbreitet sich mit Lichtgeschwindigkeit $c$ in Entfernung $|\vec{r}-\vec{r}'|$ "andert sich das Feld erst zur sp"ateren Zeit $t=\tilde{t}+\frac{|\vec{r}-\vec{r}'|}{c}$\\
+Wegen der verz"ogerten "Anderung hei\ss t die Potentiall"osung auch \underline{retardiertes Potential}
+\[\phi_\mathrm{ret}(\vec{r},t)=\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{\rho\left(\vec{r}',t-\frac{|\vec{r}-\vec{r}'|}{c}\right)}{|\vec{r}-\vec{r}'|}\]
+Ist spezielle L"osung der inhomogenen Wellengleichung
+\[\left(\Delta-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)\phi=-\frac{1}{\epsilon_0}\rho\]
+Die entsprechende L"osung der Gleichung f"ur das Vektorpotential $\vec{A}$,
+\[\left(\Delta-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)\vec{A}=-\mu_0\vec{J}(\vec{r},t),\]
+ist
+\[\vec{A}_\mathrm{ret}(\vec{r},t)=\frac{\mu_0}{4\pi}\int\dd^3r'\frac{\vec{J}\left(\vec{r}',t-\frac{|\vec{r}-\vec{r}'|}{c}\right)}{|\vec{r}-\vec{r}'|}\]
+Damit haben wir die partikul"are L"osung der inhomogenen Wellengleichung gefunden.\\
+Die Felder erhalten wir gem"a\ss:
+\[\vec{B}=\vabla\times\vec{A},\ \vec{E}=-\vabla\phi-\frac{\partial\vec{A}}{\partial t}\]
+Bemerkung:\\
+Wir haben nur die L"osung mit
+\[e^{+i\frac{\omega}{c}|\vec{r}-\vec{r}'|},\]
+die auf retardierte Potentialle f"uhrt, betrachtet. Die andere L"osung,
+\[e^{-i\frac{\omega}{c}|\vec{r}-\vec{r}'|},\]
+w"urde auf
+\[\phi_\mathrm{av}(\vec{r}t)=\frac{1}{4\pi\epsilon_0}\int\dd^3r'\frac{\rho\left(\vec{r}',t+\frac{|\vec{r}-\vec{r}'|}{c}\right)}{|\vec{r}-\vec{r}'|}\]
+f"uhren. Diese L"osung hei\ss t avancierte L"osung, da "Anderung von $\rho$ f"ur $\tilde{t}=t+\frac{|\vec{r}-\vec{r}'|}{c}>t$ die Felder zu einem fr"uheren Zeitpunkt $t$ beeinflusst.\\
+Das widerspricht dem Kausalit"atsprinzip. Erst bei formalen Problemen relevant (Feldtheorie, S-Matrix-Formalismus).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
