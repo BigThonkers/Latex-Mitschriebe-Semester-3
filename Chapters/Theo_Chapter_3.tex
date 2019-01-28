@@ -2764,3 +2764,104 @@ $ \vec{d}_{\tx{ret}} \defeq \vec{r} - \vec{R}(t_{\tx{ret}}) \qquad \vec{e}_{\tx{
 	$ \sim \frac{1}{d_{\tx{ret}}} \overset{r \to \infty}{\longrightarrow} \frac{1}{r} $ dominiert für $ r \to \infty $\\[5pt]
 	$ \sim \dot{\vec{\beta}} $ verschwindet für eine gleichförmig Bewegte Ladung
 \end{enumerate}
+
+% lecture 28.01
+
+[...]
+
+Zeitabh"angige Felder in Raumbereichen au\ss erhalb der Ladungsverteilung.\\
+\underline{Annahmen}:
+\begin{enumerate}[i)]
+\item zeitabh"angig im gro\ss en Abstand zur Quelle
+%T1
+\[\vec{j}(\vec{r})=\begin{cases}0&r'>R_0\\\textrm{sonst}&\textrm{beliebig}\end{cases}\]
+$\rightarrow$ Betrachtung von $\vec{A}$ ausreichend
+\[\vec{B}=\vabla\times\vec{A}\]
+\[\vabla\times\vec{B}(\vec{r},t)-\frac{1}{c^2}\frac{\partial\vec{E}(\vec{r},t)}{\partial t}=\mu_0\vec{j}(\vec{r},t)\underbrace{=}_{\mathclap{|\vec{r}|>R_0}}0\]
+\begin{align*}
+\frac{\partial}{\partial t}\vec{E}(\vec{r},t)&=c^2\vabla\times\vec{B}=c^2\vabla\times(\vabla\times\vec{A}(\vec{r},t))\\
+&=e^{i\omega t}c^2\vabla\times(\vabla\times\vec{A}(\vec{r}))
+\Rightarrow\vec{E}(\vec{r},t)&=\frac{i}{\omega}e^{i\omega t}c^2\vabla\times(\vabla\times\vec{A}(\vec{r}))+\underbrace{\vec{f}(\vec{r})}_{\mathclap{\omega\neq0\Rightarrow\vec{f}=0}}
+\end{align*}
+\item Wellenl"ange $\lambda>>$ Ausdehnung $R_0$ (Langwellenn"aherung)
+\[\lambda=\frac{2\pi}{k}=\frac{2\pi c}{\omega}>>R_0\]
+i)\& ii): \[R_0<<\lambda,r\]
+\[\frac{e^{ik|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}\]
+\begin{align*}
+|\vec{r}-\vec{r}'|&=\sqrt{r^2-2\vec{r}\cdot\vec{r}'+\vec{r}'^2}\\
+&=r\sqrt{1-2\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}+\left(\frac{r'}{r}\right)^2}\\
+&\underbrace{\approx}_{\mathclap{r'<<r}}r\left(1-\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}\right)\\
+e^{ik|\vec{r}-\vec{r}'|}&\approx e^{ikr}\underbrace{e^{-ik\vec{e}_{\vec{r}}\cdot\vec{r}'}}_{\mathclap{\underbrace{\approx}_{\mathclap{kr'=2\pi\frac{r'}{\lambda}<<1}}1-ik\vec{e}_{\vec{r}}\cdot\vec{r}'}}\\
+\frac{1}{|\vec{r}-\vec{r}'|}&\approx\frac{1}{r}\left(1+\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}\right)\\
+\frac{e^{ik|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}&\approx \frac{e^{ikr}}{r}(1-ik\vec{e}_{\vec{r}}\cdot\vec{r}')\left(1+\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}\right)\\
+&=e^{ikr}\left[\frac{1}{r}-ik\vec{e}_{\vec{r}}\cdot\vec{r}'+\frac{1}{r}\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}-ik\left(\vec{e}_{\vec{r}}\cdot\frac{\vec{r}'}{r}\right)^2\right]\\
+&\approx\frac{e^{ikr}}{r}\left[1+\vec{e}_{\vec{r}}\cdot\vec{r}'\left(\frac{1}{r}-ik\right)\right]\\
+\vec{A}(\vec{r}&=\frac{\mu_0}{4\pi}\int\dd^3r'\vec{j}(\vec{r}')\frac{e^{ik|\vec{r}-\vec{r}'|}}{|\vec{r}-\vec{r}'|}\\
+&=\underbrace{\frac{\mu_0}{4\pi}\frac{e^{ikr}}{r}\int\dd^3r'\vec{j}(\vec{r}')}_{\textrm{elektrischer Dipolanteil (E1)}}\\
+&+\underbrace{\frac{\mu_0}{4\pi}\frac{e^{ikr}}{r}\left(\frac{1}{r}-ik\right)\int\dd^3r'\vec{j}(\vec{r}')(\vec{e}_{\vec{r}}\cdot\vec{r}')}_{\textrm{elektrischer Quadrupol- und magnetischer Dipolanteil (E2,  M1}}\\
+\end{align*}
+\underline{elektrischer Dipolterm}:\\
+lokalisierte Stromverteilung $\vec{j}$:
+\[\int\dd^3r'\vec{j}(\vec{r}')=-\int\dd^3r'\vec{r}'\vabla\cdot\vec{j}(\vec{r})\]
+\[\vabla\cdot(x\vec{j}(\vec{r}))=x\vabla\cdot\vec{j}+\vec{j}\cdot\vabla x=x\vabla\cdot\vec{j}+jx\]
+\[\Rightarrow\int_{\mathbb{R}^3}\dd^3r'j_x(\vec{r}')=\underbrace{int_{\mathbb{R}^3}\dd^3r'\vabla\cdot(x'\vec{j}(\vec{r}'))}_{=0}-\int_{\mathbb{R}^3}\dd^3r'x'\vabla\cdot\vec{j}\]
+Kontinuit"atsgleichung
+\begin{align*}
+=0\frac{\partial}{\partial t}\underbrace{\rho(\vec{r},t)}_{=e^{-i\omega t}\rho(\vec{r})}+\vabla\cdot\underbrace{\vec{j}(\vec{r},t)}_{=e^{-i\omega t}\vec{j}(\vec{r})}\\
+&=-i\omega\rho(\vec{r},t)+e^{-i\omega t}\vabla\cdot\vec{j}(\vec{r}\\
+\vabla\cdot]\vec{j}(\vec{r})=i\omega e^{i\omega t}\rho(\vec{r},t)\\
+&=i\omega\rho(\vec{r})
+\end{align*}
+\begin{align*}\Rightarrow\int\dd^3r'\vec{j}(\vec{r}')&=-i\omega\underbrace{\int\dd^3r'\vec{r}'\rho(\vec{r}')}_{\vec{p}\textrm{ Dipolmoment}}\\
+&=-i\omega\vec{p}
+\end{align*}
+\begin{align*}
+\vec{A}_{\textrm{E1}}(\vec{r})&=-i\omega\frac{\mu_0}{4\pi}\frac{e^{ikr}}{r}\vec{p}\\
+\vec{A}_{\textrm{E1}}&=e^{-i\omega t}\vec{A}_\textrm{E1}(\vec{r})=-i\omega\frac{\mu_0}{4\pi}\frac{e^{ikr}}{r}\underbrace{e^{-i\omega t}\vec{p}}_{\mathclap{=\int\dd^3r'\vec{r}'\rho(\vec{r},t)=\vec{p}(t)}}
+\end{align*}
+\end{enumerate}
+
+\subsubsection{Elektrische Dipolstrahlung}
+\begin{align*}
+\vec{A}(\vec{r},t)&=e^{-i\omega t}\vec{A}(\vec{r})\\
+\vec{A}(\vec{r}&=-i\omega\frac{\mu_0}{4\pi}\frac{e^{ikr}}{r}\vec{p}\\
+\vec{B}(\vec{r},t)&=\vabla\times\vec{A}(\vec{r},t)\\
+&=e^{-i\omega t}\vabla\times\vec{A}(\vec{r})
+\end{align*}
+%\begin{align}
+%\vabla\times\vec{A}&=-i\omega\frac{\mu_0}{4\pi}\underbrace{\vabla\times\left(\frac{e^{ikr}}{r}\vec{p}\right)}_{=-\vec{p}\times\underbrace{\vabla\frac{e^{ikr}}{r}}_{\mathclap{=\vec{e}_{\vec{r}}\frac{\partial}{\partial r}\frac{e^{ikr}}{r}=ik\frac{e^{ikr}}{r}\left(1-\frac{1}{ikr}\right)}}\\
+%\Rightarrow\vabla\times\vec{A}&=i\omega\frac{\mu_0}{4\pi}ik\frac{e^{ikr}}{r}\left(1-\frac{1}{ikr}\right)(\vec{p}\times\vec{e}_r)\\
+%\Rightarrow\vabla\times\vec{A}&=\frac{\mu_0}{4\pi}ck^2\frac{e^{ikr}}{r}\left(1-\frac{1}{ikr}\right)(\vec{e}_{r}\times\vec{p})\\
+%\Rightarrow\vec{B}(\vec{r},t)&=\frac{\mu_0}{4\pi}ck^2\frac{e^{i(kr-\omega t)}}{r}\left(1-\frac{1}{ikr}\right)\vec{e}_r\times\vec{p}
+%\end{align*}
+
+%T2
+
+\[\vec{E}(\vec{r},t)=\frac{i}{\omega}e^{-i\omega t}c^2\vabla\times(\vabla\times\vec{A}(\vec{r}))\]
+%\[\Rightarrow\vec{E}(\vec{r},t)=\frac{1}{4\pi\epsilon_0}\frac{e^{i(kr-\omega t}}{r}\left\{k^2\underbrace{(\vec{e}_r\times\vec{p})\times\vec{e}_r}_{\textrm{transversal}}+\left(\frac{1}{r^2}-\frac{ik}{r}\right)\underbrace{[3\vec{e}_r(\vec{e}_r\cdot\vec{p})-\vec{p}]\right\}}_{\textrm{auch Komponenten entlang }\vec{e}_r}\]
+Grenzfall: statische Dipol
+\[\omega\to0,\ k\to0\]
+\[\vec{E}(\vec{r},t)\to\frac{1}{4\pi\epsilon_0}\frac{3\vec{e}_r(\vec{e}_r\cdot\vec{p})-\vec{p}}{r^3}\]
+\[\vec{B}\to0\]
+\underline{Fernberecih (Strahlungszone)}
+\[kr>>1, r>>\lambda\]
+
+%T3
+
+\[\frac{1}{kr}<<1\]
+
+\[\frac{k^2}{r}=\frac{k^2r^2}{r^3}>>\frac{1}{r^3}\]
+\[\frac{k}{r^2}=\frac{k^2}{krr}<<\frac{k^2}{r}\]
+\begin{align*}
+\vec{B}(\vec{r},t)&\approx\frac{\mu_0}{4\pi}ck^2\frac{e^{i(kr-\omega t)}}{r}\vec{e}_r\times\vec{p}\\
+\vec{E}(\vec{r},t)&\approx\frac{1}{4\pi\epsilon_0}\frac{e^{i(kr-\omega t)}}{r}\vec{e}_r\times\vec{p}\times\vec{e}_r\\
+&=c\vec{B}(\vec{r},t)\times\vec{e}_r
+\end{align*}
+\begin{enumerate}[i)]
+\item $\vec{E},\ \vec{B},\ \vec{e}_r$ orthogonal
+
+%T4
+
+\item $|\vec{E}|\propto\frac{1}{r},\ |\vec{B}\propto\frac{1}{r}$ Strahlungsfelder
+\end{enumerate}
+
